@@ -45,6 +45,7 @@ const Main = () => {
       if (response.ok) {
         const updatedAquariums = userData.aquariums.filter(aquarium => aquarium !== selectedAquarium);
         userData.aquariums=updatedAquariums;
+        setSelectedAquarium(null);
         navigate("/Main", {});
         
       } else {
