@@ -29,7 +29,7 @@ public class Population implements CommandLineRunner {
         public void run(String... args) throws Exception {
                 List<Fish> fishList = new ArrayList<>();
                 try (BufferedReader reader = new BufferedReader(
-                                new FileReader("Backend/api/src/main/java/com/fish/api/fish_data.txt"))) {
+                                new FileReader("src/main/java/com/fish/api/fish_data.txt"))) {
                         String line;
                         while ((line = reader.readLine()) != null) {
                                 String[] fields = line.split(",");
