@@ -8,3 +8,13 @@ services:
       - 'MYSQL_USER=user'
     ports:
       - '3306'
+
+  jacenterprise-react-app:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    ports:
+      - "24000:6001"
+    volumes:
+      - .:/Frontend/src/app
+      - /Frontend/node_modules
