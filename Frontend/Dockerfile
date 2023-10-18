@@ -12,6 +12,6 @@ RUN npm install
 
 RUN npm run build
 
-EXPOSE 6001
+EXPOSE 1700
 
 CMD ["npm", "run", "dev"]

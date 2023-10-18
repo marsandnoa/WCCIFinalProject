@@ -35,7 +35,7 @@ const Main = () => {
 
   const handleDelete = async() => {
     try {
-      const response = await fetch("http://127.0.0.1:8080/aquariums/delete/"+selectedAquarium.name, {
+      const response = await fetch("http://ec2-18-189-150-72.us-east-2.compute.amazonaws.com:1701/aquariums/delete/"+selectedAquarium.name, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +71,7 @@ const Main = () => {
         fishSchools:[],
       };
 
-      const response = await fetch("http://127.0.0.1:8080/aquariums/new/"+userData.userName, {
+      const response = await fetch("http://ec2-18-189-150-72.us-east-2.compute.amazonaws.com:1701/aquariums/new/"+userData.userName, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

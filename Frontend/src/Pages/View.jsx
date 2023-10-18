@@ -54,7 +54,7 @@ const AquariumPage = ({ aquarium }) => {
   const [stringArray, setStringArray] = useState([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8080/aquariums/compatibility/'+aquarium.name)
+    fetch('http://ec2-18-189-150-72.us-east-2.compute.amazonaws.com:1701/aquariums/compatibility/'+aquarium.name)
       .then(response => response.json())
       .then(data => {
         setStringArray(data);
@@ -65,7 +65,7 @@ const AquariumPage = ({ aquarium }) => {
   const [ebaySearches, setebaySearches] = useState([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8080/aquariums/tankinfo/'+aquarium.name)
+    fetch('http://ec2-18-189-150-72.us-east-2.compute.amazonaws.com:1701/aquariums/tankinfo/'+aquarium.name)
       .then(response => response.json())
       .then(data => {
         setebaySearches(data);

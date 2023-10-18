@@ -67,7 +67,7 @@ const AquariumPage = ({ aquarium }) => {
   useEffect(() => {
     const fetchFishTypes = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8080/fish/findall");
+        const response = await fetch("http://ec2-18-189-150-72.us-east-2.compute.amazonaws.com:1701/fish/findall");
         if (response.ok) {
           const data = await response.json();
           setFishTypes(data); 
@@ -132,7 +132,7 @@ const AquariumPage = ({ aquarium }) => {
     }
     const handleFishTypeSelect = async (fishType) => {
       try {
-        const response = await fetch(`http://127.0.0.1:8080/fishschools/new/${aquarium.name}`, {
+        const response = await fetch(`http://ec2-18-189-150-72.us-east-2.compute.amazonaws.com:1701/fishschools/new/${aquarium.name}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -158,7 +158,7 @@ const AquariumPage = ({ aquarium }) => {
 
     const handleDialogSave = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8080/fishschools/modify/${editedFishSchool.id}`, {
+        const response = await fetch(`http://ec2-18-189-150-72.us-east-2.compute.amazonaws.com:1701/fishschools/modify/${editedFishSchool.id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -179,7 +179,7 @@ const AquariumPage = ({ aquarium }) => {
 
       const handleDelete = async () => {
         try {
-          const response = await fetch(`http://127.0.0.1:8080/fishschools/delete/${selectedFishSchool.id}`, {
+          const response = await fetch(`http://ec2-18-189-150-72.us-east-2.compute.amazonaws.com:1701/fishschools/delete/${selectedFishSchool.id}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
